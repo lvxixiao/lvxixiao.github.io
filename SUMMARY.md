@@ -13,4 +13,7 @@
       * [初始化与清理](java/note/thinking-in-java/chu-shi-hua-yu-qing-li/README.md)
         * [垃圾回收器如何工作](java/note/thinking-in-java/chu-shi-hua-yu-qing-li/la-ji-hui-shou-qi-ru-he-gong-zuo.md)
         * [JIT](java/note/thinking-in-java/chu-shi-hua-yu-qing-li/jit.md)
+  * [数据库](java/database/README.md)
+    * [MySQL](java/database/mysql/README.md)
+      * [成绩分组取最大值问题](java/database/mysql/cheng-ji-fen-zu-qu-zui-da-zhi-wen-ti.md)
 

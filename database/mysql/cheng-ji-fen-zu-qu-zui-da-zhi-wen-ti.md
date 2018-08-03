@@ -1,5 +1,7 @@
 # 成绩分组取最大值问题
 
+
+
 #### 描述
 
 一张班级成绩表 （科目，分数，同学），现需要查出各科目 最高分的同学；
@@ -17,7 +19,7 @@ create table grade2(
 #### 数据库中数据
 
 | name | subject | grade |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 1 | lang | 90 |
 | 2 | lang | 87 |
 | 3 | lang | 56 |
@@ -34,7 +36,7 @@ create table grade2(
 | 4 | math | 43 |
 | 5 | math | 43 |
 
-#### 解答
+#### 解
 
 **错误示范**
 
@@ -43,7 +45,7 @@ SELECT name,max(grade),subject FROM grade2 GROUP BY subject;
 ```
 
 | name | max\(grade\) | subject |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 5 | 64 | english |
 | 1 | 234 | lang |
 | 1 | 43 | math |
@@ -55,7 +57,6 @@ SELECT name,max(grade),subject FROM grade2 GROUP BY subject;
 将grade2 表分组后作为新的表，用表联结去查询。
 
 ```text
-#SQL1
 SELECT a.name,a.subject,a.grade FROM grade2 AS a 
 RIGHT OUTER JOIN 
 (SELECT max(grade) AS grade , subject FROM grade2 GROUP BY subject) AS b
@@ -63,7 +64,7 @@ ON a.grade = b.grade AND a.subject = b.subject;
 ```
 
 | name | subject | grade |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 4 | lang | 234 |
 | 1 | english | 64 |
 | 4 | math | 43 |
@@ -74,28 +75,28 @@ ON a.grade = b.grade AND a.subject = b.subject;
 使用**not exists**
 
 ```text
-#SQL2
 SELECT * FROM grade2 a
 WHERE 
-(
-    NOT EXISTS(SELECT 1 FROM grade2 c where c.subject = 'math' AND c.grade > a.grade) AND a.subject = 'math'
-)
+  (
+    NOT EXISTS(SELECT 1 FROM grade2 c where c.subject = 'math' AND c.grade > a.grade) AND a.subject = 'math')
+  )
 OR
-(
+  (
     NOT EXISTS(SELECT 1 FROM grade2 c WHERE c.subject = 'lang' AND c.grade > a.grade) AND a.subject = 'lang'
-) 
+  )
 OR
-(
+  (
     NOT EXISTS(SELECT 1 FROM grade2 c WHERE c.subject = 'english' AND c.grade > a.grade) AND a.subject = 'english'
-);
+  )
 ```
 
 | name | subject | grade |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 4 | lang | 234 |
 | 1 | english | 64 |
 | 4 | math | 43 |
 | 5 | math | 43 |
+|  |  |  |
 
 上面那个语句还可以写为
 
@@ -108,7 +109,7 @@ NOT EXISTS
 );
 ```
 
-#### 效率
+#### 效率 {#效率}
 
 为了测试以上三条语句的效率，我向数据库中插入了3万条数据。
 
@@ -120,13 +121,9 @@ NOT EXISTS
 
 可以看出,exists函数的效率是十分低下的。
 
+![](../../.gitbook/assets/sql1%20%281%29.png)
 
+![](../../.gitbook/assets/sql2%20%281%29.png)
 
-![SQL1](../../.gitbook/assets/sql1.png)
-
-#### 
-
-![SQL2](../../.gitbook/assets/sql2.png)
-
-![SQL3](../../.gitbook/assets/sql3.png)
+![](../../.gitbook/assets/sql3%20%281%29.png)
 

@@ -121,9 +121,9 @@ NOT EXISTS
 
 可以看出,exists函数的效率是十分低下的。
 
-![](../../.gitbook/assets/sql1%20%281%29.png)
+![](../../.gitbook/assets/sql1.png)
 
-![](../../.gitbook/assets/sql2%20%281%29.png)
+![](../../.gitbook/assets/sql2.png)
 
 ![](../../.gitbook/assets/sql3%20%281%29.png)
 

@@ -129,4 +129,10 @@
     * [段式存储管理](os/store/segmented-memory.md)
     * [段式虚拟存储](os/store/segment-virtual-storage.md)
     * [段页式存储管理](os/store/segment-page-storage-management.md)
+  * [设备管理](os/equipment/README.md)
+    * [IO缓冲区](os/equipment/io.md)
+  * [文件管理](os/file/README.md)
+    * [文件的存储](os/file/file-store.md)
+    * [文件的逻辑结构](os/file/logic.md)
+    * [文件的物理结构](os/file/physics.md)
 

@@ -16,14 +16,49 @@
 
 脚本引擎是一个可以执行用户某种特定语言编写的脚本的类库。当虚拟机启动时，它会发现可用的脚本引擎。
 
-| 引擎 | 名字 | MIME类型 | 文件扩展 |
-| :--- | :--- | :--- | :--- |
-| Nashorn | nashorn,Nashorn,js,JS,JavScript,javascript,ECMAScript,ecmascript | application/javascript,application/ecmascript,test/javacript,test/ecmascript | js |
-| Grovy | groovy | 无 | groovy |
-| Renijin | Renijin | test/x-R | R,r,S,s |
-| SISC Scheme | sisc | 无 | scheme,sisc |
-
-通常，可以通过名字、MIME类型或文件扩展来获得引擎
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">引擎</th>
+      <th style="text-align:left">名字</th>
+      <th style="text-align:left">MIME类型</th>
+      <th style="text-align:left">文件扩展</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Nashorn</td>
+      <td style="text-align:left">
+        <p>nashorn,Nashorn,js,JS,</p>
+        <p>JavScript,javascript,ECMAScript,</p>
+        <p>ecmascript</p>
+      </td>
+      <td style="text-align:left">
+        <p>application/javascript,application/</p>
+        <p>ecmascript,test/javacript,test/ecmascript</p>
+      </td>
+      <td style="text-align:left">js</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Grovy</td>
+      <td style="text-align:left">groovy</td>
+      <td style="text-align:left">无</td>
+      <td style="text-align:left">groovy</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Renijin</td>
+      <td style="text-align:left">Renijin</td>
+      <td style="text-align:left">test/x-R</td>
+      <td style="text-align:left">R,r,S,s</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SISC Scheme</td>
+      <td style="text-align:left">sisc</td>
+      <td style="text-align:left">无</td>
+      <td style="text-align:left">scheme,sisc</td>
+    </tr>
+  </tbody>
+</table>通常，可以通过名字、MIME类型或文件扩展来获得引擎
 
 ```text
 ScriptEngine engine = manager.getEngineByName("nashorn");

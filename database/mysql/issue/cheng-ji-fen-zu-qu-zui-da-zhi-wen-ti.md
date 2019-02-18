@@ -109,7 +109,7 @@ NOT EXISTS
 );
 ```
 
-#### 效率 {#效率}
+#### 效率 <a id="&#x6548;&#x7387;"></a>
 
 为了测试以上三条语句的效率，我向数据库中插入了3万条数据。
 
@@ -121,9 +121,9 @@ NOT EXISTS
 
 可以看出,exists函数的效率是十分低下的。
 
-![](../../.gitbook/assets/sql1.png)
+![](../../../.gitbook/assets/sql1.png)
 
-![](../../.gitbook/assets/sql2.png)
+![](../../../.gitbook/assets/sql2.png)
 
-![](../../.gitbook/assets/sql3%20%281%29.png)
+![](../../../.gitbook/assets/sql3%20%281%29.png)
 
